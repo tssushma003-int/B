@@ -1,0 +1,79 @@
+<html>
+<head><title>student result</title>
+<script>
+function calculate()
+{
+var name=document.getElementById("name").value;
+
+var m1=Number(document.getElementById("m1").value);
+var m2=Number(document.getElementById("m2").value);
+var m3=Number(document.getElementById("m3").value);
+var m4=Number(document.getElementById("m4").value);
+var m5=Number(document.getElementById("m5").value);
+
+var total=m1+m2+m3+m4+m5;
+var avg=total/5;
+var result;
+var grade;
+if(m1<35 || m2<35 ||m3<35 || m4<35 || m5<35)
+{
+result="fail";
+grade="F";
+}
+else
+{
+result="pass";
+
+if(avg>=90)
+grade="A";
+
+else if(avg>=70)
+grade="B";
+
+else if(avg>=60)
+grade="C";
+
+else
+grade="D";
+}
+
+document.getElementById("output").innerHTML=
+"name:"+ name + "<br>" +
+"total:"+ total + "<br>" +
+"average:"+ avg + "<br>" +
+"result:"+ result + "<br>" +
+"grade:"+ grade + "<br>" ;
+}
+</script>
+</head>
+
+<body bgcolor="lightblue" align="center">
+<h2>student information</h2>
+name:
+<input type="text" id="name">
+<br><br>
+m1:
+<input type="Number" id="m1">
+<br><br>
+
+m2:
+<input type="Number" id="m2">
+<br><br>
+
+m3:
+<input type="Number" id="m3">
+<br><br>
+
+m4:
+<input type="Number" id="m4">
+<br><br>
+
+m5:
+<input type="Number" id="m5">
+<br><br>
+<button onclick="calculate()">calculate</button>
+
+<p id="output">
+</p>
+</body>
+</html>
